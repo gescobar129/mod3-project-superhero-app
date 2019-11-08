@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_11_08_175735) do
     t.string "base"
     t.string "group_affiliation"
     t.string "relatives"
-    t.string "imgage_url"
+    t.string "image_url"
   end
 
 end

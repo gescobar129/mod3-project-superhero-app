@@ -17,5 +17,36 @@ puts 'Fetching superhero data...'
     url: request_url)
     # headers: {params: {APPID: ENV['APPID']}})
   superhero = JSON.parse(request)
-  puts superhero
+  Superhero.create(
+    name: superhero['name'],
+    intelligence: superhero['powerstats']['intelligence'],
+    strength: superhero['powerstats']['strength'],
+    speed: superhero['powerstats']['speed'],
+    durability: superhero['powerstats']['durability'],
+    power: superhero['powerstats']['power'],
+    combat: superhero['powerstats']['combat'],
+    full_name: superhero['biography']['full-name'],
+    alter_egos: superhero['biography']['alter-egos'],
+    aliases: superhero['biography']['aliases'][0],
+    place_of_birth: superhero['biography']['place-of-birth'],
+    first_appearance: superhero['biography']['first-appearance'],
+    publisher: superhero['biography']['publisher'],
+    alignment: superhero['biography']['alignment'],
+    gender: superhero['appearance']['gender'],
+    race: superhero['appearance']['race'],
+    height_feet: superhero['appearance']['height'][0],
+    height_meters: superhero['appearance']['height'][1],
+    weight_lbs: superhero['appearance']['weight'][0],
+    weight_kgs: superhero['appearance']['weight'][1],
+    eye_color: superhero['appearance']['eye-color'],
+    hair_color: superhero['appearance']['hair-color'],
+    occupation: superhero['work']['occupation'],
+    base: superhero['work']['base'],
+    group_affiliation: superhero['connections']['group-affiliation'],
+    relatives: superhero['connections']['relatives'],
+    image_url: superhero['image']['url']
+  )
+  puts superhero_id
 end
+
+puts 'DB seeded!'
