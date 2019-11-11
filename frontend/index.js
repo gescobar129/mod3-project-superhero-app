@@ -31,7 +31,7 @@ function renderCharacterCards(character) {
     let cardNames = document.createElement('div')
     cardNames.setAttribute('class', 'card-names')
 
-    //button-modal feature. 
+    //button-modal feature 
     let button = document.createElement('button')
     button.setAttribute('data-target', '.bd-example-modal-xl')
     button.setAttribute('data-toggle', 'modal')
