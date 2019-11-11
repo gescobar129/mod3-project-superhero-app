@@ -12,7 +12,8 @@ function renderCharacterCards(character) {
     let characterCard = document.createElement('div')
     characterCard.setAttribute('class', 'character-card')
 
-    
+
+
     //image
     let characterImage = document.createElement('img')
     characterImage.setAttribute('class', 'image-size')
@@ -31,7 +32,7 @@ function renderCharacterCards(character) {
     let cardNames = document.createElement('div')
     cardNames.setAttribute('class', 'card-names')
 
-    //button-modal feature 
+    //button-modal feature
     let button = document.createElement('button')
     button.setAttribute('data-target', '.bd-example-modal-xl')
     button.setAttribute('data-toggle', 'modal')
@@ -41,11 +42,13 @@ function renderCharacterCards(character) {
     cardNames.append(characterName, characterFullName)
     characterCard.append(characterImage, cardNames)
     button.append(characterCard) //I wrapped the characterCard in a button so modal can work
+    // button.setAttribute('id', 'myList') // test
     characterContainer.append(button)
+    characterContainer.setAttribute('id', 'myList') // this is for search functionality
 
     button.addEventListener('click', event => {
         //following is what happens when you click a character card
-        
+
         let modalHeader = document.querySelector('.modal-header')
 
         //super name
@@ -61,7 +64,7 @@ function renderCharacterCards(character) {
         // debugger
     })
 
-    
+
 }
 
 let createButtonDiv = document.querySelector('.create-button-div')
@@ -75,13 +78,13 @@ createButtonDiv.append(createButton)
 
 createButton.addEventListener('click', event => {
 
-    let saveForm = document.querySelector('.create-form') 
+    let saveForm = document.querySelector('.create-form')
 
     saveForm.addEventListener('submit', event => {
         event.preventDefault();
         event.target['create-character-name'].value
         // debugger
-    
+
     fetch('http://localhost:3000/superheros', {
         method: 'POST',
         headers: {
@@ -118,3 +121,13 @@ createButton.addEventListener('click', event => {
 })
 
 })
+
+
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myList div").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
