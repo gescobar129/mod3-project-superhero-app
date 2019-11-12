@@ -135,8 +135,14 @@ fetch('http://localhost:3000/superheros', {
 })
 .then(res => res.json())
 .then(newCharObj => {
-    debugger
     renderCharacterCards(newCharObj)
+    const modal = document.getElementById('exampleModal')
+    modal.classList.toggle('show')
+    modal.setAttribute('style', 'display: none')
+    modal.removeAttribute('aria-modal')
+    modal.setAttribute('aria-hidden', 'true')
+    const modalBackdrop = document.querySelector('.modal-backdrop')
+    modalBackdrop.remove()
 })
 
 })
