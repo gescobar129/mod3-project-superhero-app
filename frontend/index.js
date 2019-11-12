@@ -92,51 +92,49 @@ createButton.setAttribute('data-target', '#exampleModal')
 createButton.innerText = "Create Character"
 createButtonDiv.append(createButton)
 
-createButton.addEventListener('click', event => {
 
-    let saveForm = document.querySelector('.create-form')
 
-    saveForm.addEventListener('submit', event => {
-        event.preventDefault();
-        event.target['create-character-name'].value
-        // debugger
+let saveForm = document.querySelector('.create-form')
 
-    fetch('http://localhost:3000/superheros', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-            name: event.target['create-character-name'].value,
-            image_url: event.target["create-image-url"].value,
-            full_name: event.target["create-character-full-name"].value,
-            // name: event.target["bio-text"].value,
-            inetelligence: event.target["create-character-intelligence"].value,
-            strength: event.target["create-character-strength"].value,
-            speed: event.target["create-character-speed"].value,
-            durability: event.target['create-character-durability'].value,
-            power: event.target['create-character-power'].value,
-            combat: event.target['create-character-combat'].value,
-            height_feet: event.target['create-character-height'].value,
-            weight_lbs: event.target['create-character-weight'].value,
-            eye_color: event.target['create-character-eye-color'].value,
-            hair_color: event.target['create-character-hair-color'].value,
-            universe: event.target['create-character-universe'].value,
-            occupation: event.target['create-character-occupation'].value,
-            place_of_birth: event.target['create-character-birth'].value,
-            relatives: event.target['create-character-relatives'].value,
-        })
+saveForm.addEventListener('submit', event => {
+    event.preventDefault();
+    // debugger
+
+fetch('http://localhost:3000/superheros', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+    },
+    body: JSON.stringify({
+        name: event.target['create-character-name'].value,
+        image_url: event.target["create-image-url"].value,
+        full_name: event.target["create-character-full-name"].value,
+        // name: event.target["bio-text"].value,
+        intelligence: event.target["create-character-intelligence"].value,
+        strength: event.target["create-character-strength"].value,
+        speed: event.target["create-character-speed"].value,
+        durability: event.target['create-character-durability'].value,
+        power: event.target['create-character-power'].value,
+        combat: event.target['create-character-combat'].value,
+        height_feet: event.target['create-character-height'].value,
+        weight_lbs: event.target['create-character-weight'].value,
+        eye_color: event.target['create-character-eye-color'].value,
+        hair_color: event.target['create-character-hair-color'].value,
+        // universe: event.target['create-character-universe'].value,
+        occupation: event.target['create-character-occupation'].value,
+        place_of_birth: event.target['create-character-birth'].value,
+        relatives: event.target['create-character-relatives'].value,
     })
-    .then(res => res.json())
-    .then(newCharObj => {
-        // debugger
-        renderCharacterCards(newCharObj)
-    })
-
+})
+.then(res => res.json())
+.then(newCharObj => {
+    debugger
+    renderCharacterCards(newCharObj)
 })
 
 })
+
 
 
 $(document).ready(function(){
