@@ -1,3 +1,18 @@
+
+// search
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myList .character-card").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+
+
+
+// index fetch
 fetch('http://localhost:3000/superheros')
 .then(response => response.json())
 .then(characterArray => {
@@ -6,11 +21,16 @@ fetch('http://localhost:3000/superheros')
     })
 })
 
+
+
+
+
 function renderCharacterCards(character) {
 
     let characterContainer = document.querySelector('.character-container')
     let characterCard = document.createElement('div')
-    characterCard.setAttribute('class', 'character-card')
+    characterContainer.setAttribute('id', 'myList') // this is for search functionality
+    characterCard.setAttribute('class', 'character-card') // this is for search functionality
 
 
 
@@ -32,38 +52,25 @@ function renderCharacterCards(character) {
     let cardNames = document.createElement('div')
     cardNames.setAttribute('class', 'card-names')
 
+
+
     //button-modal feature
-    // let button = document.createElement('button')
-    // button.setAttribute('data-target', '.bd-example-modal-xl')
-    // button.setAttribute('data-toggle', 'modal')
-    // button.setAttribute('type', 'button')
+    let modalDiv = document.createElement('div')
+    modalDiv.setAttribute('data-target', '.bd-example-modal-xl')
+    modalDiv.setAttribute('data-toggle', 'modal')
+    modalDiv.setAttribute('type', 'button')
 
 
-
-
-
-
-    let buttonDiv = document.createElement('div')
-    buttonDiv.setAttribute('data-target', '.bd-example-modal-xl')
-    buttonDiv.setAttribute('data-toggle', 'modal')
-    buttonDiv.setAttribute('type', 'button')
-
-
-
-
-
-
-
-    //appending shit
+    // append shit
     cardNames.append(characterName, characterFullName)
-    characterCard.append(characterImage, cardNames)
-    buttonDiv.append(characterCard) //I wrapped the characterCard in a button so modal can work
-    // button.setAttribute('id', 'myList') // test
-    characterContainer.append(buttonDiv)
-    characterContainer.setAttribute('id', 'myList') // this is for search functionality
+    modalDiv.append(characterImage)
+    characterCard.append(modalDiv, cardNames)
+    characterContainer.append(characterCard)
 
-    buttonDiv.addEventListener('click', event => {
-        //following is what happens when you click a character card
+
+
+    modalDiv.addEventListener('click', event => {
+        //following is what happens when you click a character image on card
 
         let modalHeader = document.querySelector('.modal-header')
 
@@ -77,7 +84,6 @@ function renderCharacterCards(character) {
         let modalImage = document.querySelector('.modal-image')
         modalImage.src = character.image_url
 
-        // debugger
     })
 
 
@@ -134,14 +140,3 @@ fetch('http://localhost:3000/superheros', {
 })
 
 })
-
-
-
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myList div").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
