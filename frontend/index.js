@@ -58,7 +58,7 @@ function renderCharacterCards(character) {
     editIcon.setAttribute('data-toggle', 'modal')
     editIcon.setAttribute('data-target', '#editModal')
     editIcon.src = './edit.png'
-    
+
     // append shit
     cardNames.append(characterName, characterFullName, editIcon)
     modalDiv.append(characterImage)
@@ -67,7 +67,7 @@ function renderCharacterCards(character) {
 
     //following is what happens when you click a character image on card
     modalDiv.addEventListener('click', event => {
-        
+
         let modalHeader = document.querySelector('.modal-header')
 
         //super name
@@ -81,9 +81,9 @@ function renderCharacterCards(character) {
         modalImage.src = character.image_url
     })
 
-    //following is what happens when you click on edit icon 
+    //following is what happens when you click on edit icon
     editIcon.addEventListener('click', event => {
-    
+
     let editForm = document.querySelector('.edit-form')
 
     //pre-populate edit form below
@@ -109,7 +109,7 @@ function renderCharacterCards(character) {
         event.preventDefault()
 
         fetch(`http://localhost:3000/superheros/${character.id}`, {
-                method: "PATCH", 
+                method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
                     Accept: "application/json"
@@ -203,4 +203,17 @@ saveForm.addEventListener('submit', event => {
     .then(newCharObj => {
         renderCharacterCards(newCharObj)
     })
+})
+.then(res => res.json())
+.then(newCharObj => {
+    renderCharacterCards(newCharObj)
+    const modal = document.getElementById('exampleModal')
+    modal.classList.toggle('show')
+    modal.setAttribute('style', 'display: none')
+    modal.removeAttribute('aria-modal')
+    modal.setAttribute('aria-hidden', 'true')
+    const modalBackdrop = document.querySelector('.modal-backdrop')
+    modalBackdrop.remove()
+})
+
 })
