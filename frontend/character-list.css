@@ -49,3 +49,8 @@
     border-style: solid;
     border-width: 10px;
 }
+
+.editIcon {
+    height: 25px;
+    width: 25 px;
+}

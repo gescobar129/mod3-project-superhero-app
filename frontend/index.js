@@ -52,17 +52,21 @@ function renderCharacterCards(character) {
     let cardNames = document.createElement('div')
     cardNames.setAttribute('class', 'card-names')
 
-
-
     //button-modal feature
     let modalDiv = document.createElement('div')
     modalDiv.setAttribute('data-target', '.bd-example-modal-xl')
     modalDiv.setAttribute('data-toggle', 'modal')
     modalDiv.setAttribute('type', 'button')
 
-
+    //edit icon button
+    let editIcon = document.createElement('img')
+    editIcon.setAttribute('class', 'editIcon')
+    editIcon.setAttribute('data-toggle', 'modal')
+    editIcon.setAttribute('data-target', '#editModal')
+    editIcon.src = './edit.png'
+    
     // append shit
-    cardNames.append(characterName, characterFullName)
+    cardNames.append(characterName, characterFullName, editIcon)
     modalDiv.append(characterImage)
     characterCard.append(modalDiv, cardNames)
     characterContainer.append(characterCard)

@@ -25,6 +25,8 @@
     </div>
     <!-- SEARCH BAR END -->
 
+    <!-- create form start-->
+
     <div class="create-button-div"></div>
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -117,7 +119,109 @@
         </div>
       </div>
     </form>
+
+<!-- create form end -->
+
+
+<!-- edit modal form start  -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create Character</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="edit-form">
+            <div class="form-group">
+              <label for="character-name" class="col-form-label">Name:</label>
+              <input type="text" class="form-control" id="edit-character-name">
+            </div>
+            <div class="form-group">
+                <label for="image-url" class="col-form-label">Image Url:</label>
+                <input type="text" class="form-control" id="edit-image-url">
+            </div>
+            <div class="form-group">
+                <label for="character-full-name" class="col-form-label">Full Name:</label>
+                <input type="text" class="form-control" id="edit-character-full-name">
+            </div>
+            <!-- <div class="form-group">
+                <label for="bio-text" class="col-form-label">Bio:</label>
+                <textarea class="form-control" id="bio-text"></textarea>
+            </div> -->
+            <div class="form-group">
+                <label for="character-intelligence" class="col-form-label">Intelligence:</label>
+                <input type="text" class="form-control" id="edit-character-intelligence">
+            </div>
+            <div class="form-group">
+                <label for="character-strength" class="col-form-label">Strength:</label>
+                <input type="text" class="form-control" id="edit-character-strength">
+            </div>
+            <div class="form-group">
+                <label for="character-speed" class="col-form-label">Speed:</label>
+                <input type="text" class="form-control" id="edit-character-speed">
+            </div>
+            <div class="form-group">
+                <label for="character-durability" class="col-form-label">Durability:</label>
+                <input type="text" class="form-control" id="edit-character-durability">
+            </div>
+            <div class="form-group">
+                <label for="character-power" class="col-form-label">Power:</label>
+                <input type="text" class="form-control" id="edit-character-power">
+            </div>
+            <div class="form-group">
+                <label for="character-combat" class="col-form-label">Combat:</label>
+                <input type="text" class="form-control" id="edit-character-combat">
+            </div>
+            <div class="form-group">
+                <label for="character-height" class="col-form-label">Height:</label>
+                <input type="text" class="form-control" id="edit-character-height">
+            </div>
+            <div class="form-group">
+                <label for="character-weight" class="col-form-label">Weight:</label>
+                <input type="text" class="form-control" id="edit-character-weight">
+            </div>
+            <div class="form-group">
+                <label for="character-eye-color" class="col-form-label">Eye Color:</label>
+                <input type="text" class="form-control" id="edit-character-eye-color">
+            </div>
+            <div class="form-group">
+                <label for="character-hair-color" class="col-form-label">Hair Color:</label>
+                <input type="text" class="form-control" id="edit-character-hair-color">
+            </div>
+            <!-- <div class="form-group">
+                <label for="character-universe" class="col-form-label">Universe:</label>
+                <input type="text" class="form-control" id="edit-character-universe">
+            </div> -->
+            <div class="form-group">
+                <label for="character-occupation" class="col-form-label">Occupation:</label>
+                <input type="text" class="form-control" id="edit-character-occupation">
+            </div>
+            <div class="form-group">
+                <label for="character-birth" class="col-form-label">Place of Birth:</label>
+                <input type="text" class="form-control" id="edit-character-birth">
+            </div>
+            <div class="form-group">
+                <label for="character-relatives" class="col-form-label">Known Relatives:</label>
+                <input type="text" class="form-control" id="edit-character-relatives">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <input type="submit" name="submit" value="Save" class="submit">
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- edit modal form end -->
+
     <div class="character-container"></div>
+
+    <!-- show page modal start -->
     <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl">
               <div class="modal-content">
@@ -129,9 +233,6 @@
                     </div>
                     <div class="container-fluid">
                             stats go here
-
-
-
 
                             ...
                     </div>
@@ -155,7 +256,7 @@
             </div>
           </div>
 
-
+<!-- show page modal end -->
 
 
 
