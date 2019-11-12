@@ -33,20 +33,36 @@ function renderCharacterCards(character) {
     cardNames.setAttribute('class', 'card-names')
 
     //button-modal feature
-    let button = document.createElement('button')
-    button.setAttribute('data-target', '.bd-example-modal-xl')
-    button.setAttribute('data-toggle', 'modal')
-    button.setAttribute('type', 'button')
+    // let button = document.createElement('button')
+    // button.setAttribute('data-target', '.bd-example-modal-xl')
+    // button.setAttribute('data-toggle', 'modal')
+    // button.setAttribute('type', 'button')
+
+
+
+
+
+
+    let div = document.createElement('div')
+    div.setAttribute('data-target', '.bd-example-modal-xl')
+    div.setAttribute('data-toggle', 'modal')
+    div.setAttribute('type', 'button')
+
+
+
+
+
+
 
     //appending shit
     cardNames.append(characterName, characterFullName)
     characterCard.append(characterImage, cardNames)
-    button.append(characterCard) //I wrapped the characterCard in a button so modal can work
+    div.append(characterCard) //I wrapped the characterCard in a button so modal can work
     // button.setAttribute('id', 'myList') // test
-    characterContainer.append(button)
+    characterContainer.append(div)
     characterContainer.setAttribute('id', 'myList') // this is for search functionality
 
-    button.addEventListener('click', event => {
+    div.addEventListener('click', event => {
         //following is what happens when you click a character card
 
         let modalHeader = document.querySelector('.modal-header')
