@@ -19,6 +19,13 @@ class SuperherosController < ApplicationController
     end
   end
 
+  def update
+    @superhero = Superhero.find(params[:id])
+    @superhero.update(superhero_params)
+
+    render json: @superhero
+  end
+
   private
 
   def superhero_params
