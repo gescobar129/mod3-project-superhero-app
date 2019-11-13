@@ -1,6 +1,6 @@
 class SuperherosController < ApplicationController
   def index
-    @superheros = Superhero.all
+    @superheros = Superhero.order(:name)
     render json: @superheros
   end
 

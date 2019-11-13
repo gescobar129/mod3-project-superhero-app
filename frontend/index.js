@@ -36,7 +36,7 @@ function renderCharacterCards(character) {
     //character super name
     let characterName = document.createElement('h3')
     characterName.setAttribute('class', 'character-name')
-    characterName.innerText = character.name
+    characterName.innerText = uppercase(character.name)
 
     //character real name
     let characterFullName = document.createElement('h5')
@@ -115,7 +115,7 @@ function renderCharacterCards(character) {
                     Accept: "application/json"
                 },
                 body: JSON.stringify({
-                    name: event.target['edit-character-name'].value,
+                    name: uppercase(event.target['edit-character-name'].value),
                     image_url: event.target["edit-image-url"].value,
                     full_name: event.target["edit-character-full-name"].value,
                     intelligence: event.target["edit-character-intelligence"].value,
@@ -141,7 +141,7 @@ function renderCharacterCards(character) {
                     characterContainer.innerHTML = ''
                     $('#editModal').modal('hide')
                 characterArray.forEach(character => {
-                renderCharacterCards(character)  
+                renderCharacterCards(character)
             })
         })
     })
@@ -171,7 +171,7 @@ saveForm.addEventListener('submit', event => {
             'Accept': 'application/json'
         },
         body: JSON.stringify({
-            name: event.target['create-character-name'].value,
+            name: uppercase(event.target['create-character-name'].value),
             image_url: event.target["create-image-url"].value,
             full_name: event.target["create-character-full-name"].value,
             // name: event.target["bio-text"].value,
@@ -192,7 +192,21 @@ saveForm.addEventListener('submit', event => {
     })
     .then(res => res.json())
     .then(newCharObj => {
+      let characterContainer = document.querySelector('.character-container')
+
+
+
+
         renderCharacterCards(newCharObj)
+        characterContainer.innerHTML = ''
+
+        fetch('http://localhost:3000/superheros')
+        .then(response => response.json())
+        .then(characterArray => {
+            characterArray.forEach(character => {
+                renderCharacterCards(character)
+            })
+        }).catch(err => console.log('ERROR', err))
         // const modal = document.getElementById('exampleModal')
         // modal.setAttribute('style', 'display: none')
         // modal.classList.remove('show');
@@ -203,19 +217,9 @@ saveForm.addEventListener('submit', event => {
         $('#createModal').modal('hide')
     })
 })
-<<<<<<< HEAD
-.then(res => res.json())
-.then(newCharObj => {
-    renderCharacterCards(newCharObj)
-    const modal = document.getElementById('exampleModal')
-    modal.classList.toggle('show')
-    modal.setAttribute('style', 'display: none')
-    modal.removeAttribute('aria-modal')
-    modal.setAttribute('aria-hidden', 'true')
-    const modalBackdrop = document.querySelector('.modal-backdrop')
-    modalBackdrop.remove()
-  })  
-=======
 
 
->>>>>>> 19bb611baca1648d2644c96baa81bb37cbaf16e2
+
+function uppercase(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
