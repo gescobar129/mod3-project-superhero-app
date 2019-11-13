@@ -219,7 +219,10 @@ saveForm.addEventListener('submit', event => {
 })
 
 
+<<<<<<< HEAD
 
 function uppercase(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+=======
+>>>>>>> 775b26a8c9c35e510c7bb22300e2de7fd01b5dc9
