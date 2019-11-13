@@ -79,7 +79,195 @@ function renderCharacterCards(character) {
         //image
         let modalImage = document.querySelector('.modal-image')
         modalImage.src = character.image_url
+
+
+        // start chart here
+
+        var ctx = document.getElementById('intelligence').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'doughnut',
+
+            // The data for our dataset
+            data: {
+                labels: ['Intelligence',],
+                datasets: [{
+                    label: 'My First dataset',
+                    backgroundColor: [
+                      'rgba(255, 99, 132, 0.75)',
+                      'rgba(177, 177, 177, 0.75)',
+                    ],
+
+                    borderColor: 'rgb(112, 112, 112)',
+                    data: [
+                      character.intelligence,
+                      100 - character.intelligence]
+                }]
+            },
+
+            // Configuration options go here
+            options: {events: ['click']}
+        });
+        chart.canvas.parentNode.style.height = '200px';
+        chart.canvas.parentNode.style.width = '1000px';
+
+
+
+
+
+        var ctx = document.getElementById('strength').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'doughnut',
+
+            // The data for our dataset
+            data: {
+                labels: ["Strength",],
+                datasets: [{
+                    label: 'My First dataset',
+                    backgroundColor: [
+                      'rgba(255, 206, 86, 0.75)',
+                      'rgba(177, 177, 177, 0.75)',
+                    ],
+
+                    borderColor: 'rgb(112, 112, 112)',
+                    data: [
+                      character.strength,
+                      100 - character.strength]
+                }]
+            },
+
+            // Configuration options go here
+            options: {events: ['click']}
+        });
+        chart.canvas.parentNode.style.height = '200px';
+        chart.canvas.parentNode.style.width = '1000px';
+
+
+
+
+        var ctx = document.getElementById('speed').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'doughnut',
+
+            // The data for our dataset
+            data: {
+                labels: ["Speed",],
+                datasets: [{
+                    label: 'My First dataset',
+                    backgroundColor: [
+                      'rgba(75, 192, 192, 0.75)',
+                      'rgba(177, 177, 177, 0.75)',
+                    ],
+
+                    borderColor: 'rgb(112, 112, 112)',
+                    data: [
+                      character.speed,
+                      100 - character.speed]
+                }]
+            },
+
+            // Configuration options go here
+            options: {events: ['click']}
+        });
+        chart.canvas.parentNode.style.height = '200px';
+        chart.canvas.parentNode.style.width = '1000px';
+
+
+
+        var ctx = document.getElementById('durability').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'doughnut',
+
+            // The data for our dataset
+            data: {
+                labels: ["Durability",],
+                datasets: [{
+                    label: 'My First dataset',
+                    backgroundColor: [
+                      'rgba(153, 102, 255, 0.75)',
+                      'rgba(177, 177, 177, 0.75)',
+                    ],
+
+                    borderColor: 'rgb(112, 112, 112)',
+                    data: [
+                      character.durability,
+                      100 - character.durability]
+                }]
+            },
+
+            // Configuration options go here
+            options: {events: ['click']}
+        });
+        chart.canvas.parentNode.style.height = '200px';
+        chart.canvas.parentNode.style.width = '1000px';
+
+
+
+        var ctx = document.getElementById('power').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'doughnut',
+
+            // The data for our dataset
+            data: {
+                labels: ["Power",],
+                datasets: [{
+                    label: 'My First dataset',
+                    backgroundColor: [
+                      'rgba(255, 159, 64, 0.75)',
+                      'rgba(177, 177, 177, 0.75)',
+                    ],
+
+                    borderColor: 'rgb(112, 112, 112)',
+                    data: [
+                      character.power,
+                      100 - character.power]
+                }]
+            },
+
+            // Configuration options go here
+            options: {events: ['click']}
+        });
+        chart.canvas.parentNode.style.height = '200px';
+        chart.canvas.parentNode.style.width = '1000px';
+
+
+
+        var ctx = document.getElementById('combat').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'doughnut',
+
+            // The data for our dataset
+            data: {
+                labels: ["Combat",],
+                datasets: [{
+                    label: 'My First dataset',
+                    backgroundColor: [
+                      'rgba(45, 124, 235, 0.75)',
+                      'rgba(177, 177, 177, 0.75)',
+                    ],
+
+                    borderColor: 'rgb(112, 112, 112)',
+                    data: [
+                      character.combat,
+                      100 - character.combat]
+                }]
+            },
+
+            // Configuration options go here
+            options: {events: ['click']}
+        });
+        chart.canvas.parentNode.style.height = '200px';
+        chart.canvas.parentNode.style.width = '1000px';
+
+        // end chart here
+
     })
+
 
     //following is what happens when you click on edit icon
     editIcon.addEventListener('click', event => {
@@ -219,10 +407,7 @@ saveForm.addEventListener('submit', event => {
 })
 
 
-<<<<<<< HEAD
 
 function uppercase(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
-=======
->>>>>>> 775b26a8c9c35e510c7bb22300e2de7fd01b5dc9
