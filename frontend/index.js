@@ -135,32 +135,13 @@ function renderCharacterCards(character) {
             })
             .then(response => response.json())
             .then(() => {
-                // debugger
-                // character.name = updatedCharObj.name
-                // character.image_url = updatedCharObj.image_url
-                // character.full_name = updatedCharObj.full_name
-                // character.intelligence = updatedCharObj.intelligence
-                // character.strength = updatedCharObj.strength
-                // character.speed = updatedCharObj.speed
-                // character.durability = updatedCharObj.durability
-                // character.power = updatedCharObj.power
-                // character.combat = updatedCharObj.combat
-                // character.height_feet = updatedCharObj.height_feet
-                // character.weight_lbs = updatedCharObj.weight_lbs
-                // character.eye_color = updatedCharObj.eye_color
-                // character.hair_color = updatedCharObj.hair_color
-                // character.occupation = updatedCharObj.occupation
-                // character.place_of_birth = updatedCharObj.place_of_birth
-                // character.relatives = updatedCharObj.relatives
-
                 fetch('http://localhost:3000/superheros')
                 .then(response => response.json())
                 .then(characterArray => {
                     characterContainer.innerHTML = ''
                     $('#editModal').modal('hide')
                 characterArray.forEach(character => {
-                renderCharacterCards(character)
-                
+                renderCharacterCards(character)  
             })
         })
     })
@@ -168,12 +149,11 @@ function renderCharacterCards(character) {
 })
 }
 
-
 let createButtonDiv = document.querySelector('.create-button-div')
 let createButton = document.createElement('button')
 createButton.setAttribute('type', 'button')
 createButton.setAttribute('data-toggle', 'modal')
-createButton.setAttribute('data-target', '#exampleModal')
+createButton.setAttribute('data-target', '#createModal')
 createButton.innerText = "Create Character"
 
 createButtonDiv.append(createButton)
@@ -220,7 +200,7 @@ saveForm.addEventListener('submit', event => {
         // modal.setAttribute('aria-hidden', 'true')
         // const modalBackdrop = document.querySelector('.modal-backdrop')
         // modalBackdrop.remove()
-        $('#exampleModal').modal('hide')
+        $('#createModal').modal('hide')
     })
 })
 
