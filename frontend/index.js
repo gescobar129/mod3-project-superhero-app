@@ -266,6 +266,27 @@ function renderCharacterCards(character) {
 
         // end chart here
 
+        let charHeight = document.querySelector('.char-height')
+        charHeight.innerText = character.height_feet
+
+        let charWeight = document.querySelector('.char-weight')
+        charWeight.innerText = character.weight_lbs
+
+        let charEyeColor = document.querySelector('.char-eye-color')
+        charEyeColor.innerText = character.eye_color
+
+        let charHairColor = document.querySelector('.char-hair-color')
+        charHairColor.innerText = character.hair_color
+
+        let charOccupation = document.querySelector('.char-occupation')
+        charOccupation.innerText = character.occupation
+
+        let charOrigin = document.querySelector('.char-origin')
+        charOrigin.innerText = character.place_of_birth
+
+        let charRelatives = document.querySelector('.char-relatives')
+        charRelatives.innerText = character.relatives
+        
     })
 
 
