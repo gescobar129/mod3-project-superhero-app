@@ -203,19 +203,5 @@ saveForm.addEventListener('submit', event => {
         $('#createModal').modal('hide')
     })
 })
-<<<<<<< HEAD
-.then(res => res.json())
-.then(newCharObj => {
-    renderCharacterCards(newCharObj)
-    const modal = document.getElementById('exampleModal')
-    modal.classList.toggle('show')
-    modal.setAttribute('style', 'display: none')
-    modal.removeAttribute('aria-modal')
-    modal.setAttribute('aria-hidden', 'true')
-    const modalBackdrop = document.querySelector('.modal-backdrop')
-    modalBackdrop.remove()
-  })  
-=======
 
 
->>>>>>> 19bb611baca1648d2644c96baa81bb37cbaf16e2
