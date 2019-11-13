@@ -214,6 +214,4 @@ saveForm.addEventListener('submit', event => {
     modal.setAttribute('aria-hidden', 'true')
     const modalBackdrop = document.querySelector('.modal-backdrop')
     modalBackdrop.remove()
-})
-
-})
+  })  
