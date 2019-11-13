@@ -19,7 +19,7 @@ fetch('http://localhost:3000/superheros')
     characterArray.forEach(character => {
         renderCharacterCards(character)
     })
-})
+}).catch(err => console.log('ERROR', err))
 
 function renderCharacterCards(character) {
 
@@ -134,26 +134,37 @@ function renderCharacterCards(character) {
                 })
             })
             .then(response => response.json())
-            .then(updatedCharObj => {
+            .then(() => {
                 // debugger
-                character.name = updatedCharObj.name
-                character.image_url = updatedCharObj.image_url
-                character.full_name = updatedCharObj.full_name
-                character.intelligence = updatedCharObj.intelligence
-                character.strength = updatedCharObj.strength
-                character.speed = updatedCharObj.speed
-                character.durability = updatedCharObj.durability
-                character.power = updatedCharObj.power
-                character.combat = updatedCharObj.combat
-                character.height_feet = updatedCharObj.height_feet
-                character.weight_lbs = updatedCharObj.weight_lbs
-                character.eye_color = updatedCharObj.eye_color
-                character.hair_color = updatedCharObj.hair_color
-                character.occupation = updatedCharObj.occupation
-                character.place_of_birth = updatedCharObj.place_of_birth
-                character.relatives = updatedCharObj.relatives
+                // character.name = updatedCharObj.name
+                // character.image_url = updatedCharObj.image_url
+                // character.full_name = updatedCharObj.full_name
+                // character.intelligence = updatedCharObj.intelligence
+                // character.strength = updatedCharObj.strength
+                // character.speed = updatedCharObj.speed
+                // character.durability = updatedCharObj.durability
+                // character.power = updatedCharObj.power
+                // character.combat = updatedCharObj.combat
+                // character.height_feet = updatedCharObj.height_feet
+                // character.weight_lbs = updatedCharObj.weight_lbs
+                // character.eye_color = updatedCharObj.eye_color
+                // character.hair_color = updatedCharObj.hair_color
+                // character.occupation = updatedCharObj.occupation
+                // character.place_of_birth = updatedCharObj.place_of_birth
+                // character.relatives = updatedCharObj.relatives
+
+                fetch('http://localhost:3000/superheros')
+                .then(response => response.json())
+                .then(characterArray => {
+                    characterContainer.innerHTML = ''
+                    $('#editModal').modal('hide')
+                characterArray.forEach(character => {
+                renderCharacterCards(character)
+                
             })
+        })
     })
+})
 })
 }
 
@@ -202,18 +213,15 @@ saveForm.addEventListener('submit', event => {
     .then(res => res.json())
     .then(newCharObj => {
         renderCharacterCards(newCharObj)
+        // const modal = document.getElementById('exampleModal')
+        // modal.setAttribute('style', 'display: none')
+        // modal.classList.remove('show');
+        // modal.removeAttribute('aria-modal')
+        // modal.setAttribute('aria-hidden', 'true')
+        // const modalBackdrop = document.querySelector('.modal-backdrop')
+        // modalBackdrop.remove()
+        $('#exampleModal').modal('hide')
     })
 })
-.then(res => res.json())
-.then(newCharObj => {
-    renderCharacterCards(newCharObj)
-    const modal = document.getElementById('exampleModal')
-    modal.classList.toggle('show')
-    modal.setAttribute('style', 'display: none')
-    modal.removeAttribute('aria-modal')
-    modal.setAttribute('aria-hidden', 'true')
-    const modalBackdrop = document.querySelector('.modal-backdrop')
-    modalBackdrop.remove()
-})
 
-})
+
