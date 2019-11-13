@@ -45,12 +45,36 @@
     width: 280px;
     height: 550;
 }
+
+.modal-header {
+    background-color: black;
+}
+
+.modal-character-name {
+    color: white;
+}
+
+.modal-character-fullname {
+    color: white;
+}
+
 .border {
     border-style: solid;
     border-width: 10px;
+    font-family: 'Rambla', sans-serif;
 }
 
 .editIcon {
     height: 25px;
     width: 25 px;
 }
+
+.bio {
+    border-top: 50px;
+    font-family: 'Rambla', sans-serif;
+}
+
+.info-padding {
+    padding: 32px;
+}
+

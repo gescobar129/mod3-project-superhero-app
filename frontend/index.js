@@ -79,6 +79,28 @@ function renderCharacterCards(character) {
         //image
         let modalImage = document.querySelector('.modal-image')
         modalImage.src = character.image_url
+
+        let charHeight = document.querySelector('.char-height')
+        charHeight.innerText = character.height_feet
+
+        let charWeight = document.querySelector('.char-weight')
+        charWeight.innerText = character.weight_lbs
+
+        let charEyeColor = document.querySelector('.char-eye-color')
+        charEyeColor.innerText = character.eye_color
+
+        let charHairColor = document.querySelector('.char-hair-color')
+        charHairColor.innerText = character.hair_color
+
+        let charOccupation = document.querySelector('.char-occupation')
+        charOccupation.innerText = character.occupation
+
+        let charOrigin = document.querySelector('.char-origin')
+        charOrigin.innerText = character.place_of_birth
+
+        let charRelatives = document.querySelector('.char-relatives')
+        charRelatives.innerText = character.relatives
+        
     })
 
     //following is what happens when you click on edit icon
@@ -219,10 +241,7 @@ saveForm.addEventListener('submit', event => {
 })
 
 
-<<<<<<< HEAD
 
 function uppercase(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
-=======
->>>>>>> 775b26a8c9c35e510c7bb22300e2de7fd01b5dc9
