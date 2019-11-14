@@ -1,3 +1,6 @@
+body{
+    zoom: 100%;
+}
 .superhero-wiki-title-div {
     font-family: 'Rambla', sans-serif;
     font-family: 'Permanent Marker', cursive;
@@ -18,8 +21,9 @@
 }
 
 .chicken {
+    /* border: 2px solid red; */
     padding-left: 35px;
-    padding-right: 1230px;
+    padding-right: 30px;
     font-family: 'Rambla', sans-serif;
 }
 
@@ -147,4 +151,9 @@
 
 #bottom-row-stats {
     padding-bottom: 60px;
+}
+
+#myInput{
+    /* border: 2px solid blue; */
+    width: 30%; 
 }
