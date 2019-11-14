@@ -1,4 +1,5 @@
 class Superhero < ActiveRecord::Base
+  has_many :likes
 
   def kgs_to_i(number)
     Superhero.all.sample.weight_kgs.split[0].to_i

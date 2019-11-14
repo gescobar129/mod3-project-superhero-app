@@ -45,6 +45,10 @@ function renderCharacterCards(character) {
 
     let cardNames = document.createElement('div')
     cardNames.setAttribute('class', 'card-names')
+    let likeCounter = document.createElement('div')
+    likeCounter.setAttribute('class', 'like-count')
+    likeCounter.innerText = character.likes.length
+
 
     //button-modal feature
     let modalDiv = document.createElement('div')
@@ -59,8 +63,17 @@ function renderCharacterCards(character) {
     editIcon.setAttribute('data-target', '#editModal')
     editIcon.src = './pencil.png'
 
+    // heart icon button
+    let heartIcon = document.createElement('img')
+    heartIcon.src = './heart.png'
+    heartIcon.setAttribute('class', 'heartIcon')
+
+
+
+
+
     // append shit
-    cardNames.append(characterName, characterFullName, editIcon)
+    cardNames.append(characterName, characterFullName, editIcon, heartIcon, likeCounter)
     modalDiv.append(characterImage)
     characterCard.append(modalDiv, cardNames)
     characterContainer.append(characterCard)
@@ -287,6 +300,25 @@ function renderCharacterCards(character) {
         let charRelatives = document.querySelector('.char-relatives')
         charRelatives.innerText = character.relatives
 
+    })
+
+    heartIcon.addEventListener('click', event => {
+      fetch(`http://localhost:3000/likes`, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          superhero_id: character.id
+        })
+      })
+      .then(res => res.json())
+      .then(likeObj => {
+        let number = parseInt(likeCounter.innerText)
+        likeCounter.innerText = ''
+        likeCounter.innerText = number + 1
+      })
     })
 
 
