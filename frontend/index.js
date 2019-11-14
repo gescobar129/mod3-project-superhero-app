@@ -331,7 +331,7 @@ function renderCharacterCards(character) {
     document.getElementById('edit-character-name').value = character.name
     document.getElementById('edit-image-url').value = character.image_url
     document.getElementById('edit-character-full-name').value = character.full_name
-    document.getElementById('edit-character-intelligence').value = character.inetelligence
+    document.getElementById('edit-character-intelligence').value = character.intelligence
     document.getElementById('edit-character-strength').value = character.strength
     document.getElementById('edit-character-speed').value = character.speed
     document.getElementById('edit-character-durability').value = character.durability
