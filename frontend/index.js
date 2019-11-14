@@ -383,6 +383,7 @@ function renderCharacterCards(character) {
                     $('#editModal').modal('hide')
                 characterArray.forEach(character => {
                 renderCharacterCards(character)
+                location.reload(true)
             })
         })
     })
