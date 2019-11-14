@@ -49,4 +49,10 @@ puts 'Fetching superhero data...'
   puts superhero_id
 end
 
+
+(1..731).to_a.each do |superhero_id|
+  Like.create(superhero_id: superhero_id)
+end
+
+
 puts 'DB seeded!'

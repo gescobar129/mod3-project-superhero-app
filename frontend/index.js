@@ -45,6 +45,10 @@ function renderCharacterCards(character) {
 
     let cardNames = document.createElement('div')
     cardNames.setAttribute('class', 'card-names')
+    let likeCounter = document.createElement('div')
+    likeCounter.setAttribute('class', 'like-count')
+    likeCounter.innerText = character.likes.length
+
 
     //button-modal feature
     let modalDiv = document.createElement('div')
@@ -59,8 +63,17 @@ function renderCharacterCards(character) {
     editIcon.setAttribute('data-target', '#editModal')
     editIcon.src = './pencil.png'
 
+    // heart icon button
+    let heartIcon = document.createElement('img')
+    heartIcon.src = './heart.png'
+    heartIcon.setAttribute('class', 'heartIcon')
+
+
+
+
+
     // append shit
-    cardNames.append(characterName, characterFullName, editIcon)
+    cardNames.append(characterName, characterFullName, editIcon, heartIcon, likeCounter)
     modalDiv.append(characterImage)
     characterCard.append(modalDiv, cardNames)
     characterContainer.append(characterCard)
@@ -289,6 +302,25 @@ function renderCharacterCards(character) {
 
     })
 
+    heartIcon.addEventListener('click', event => {
+      fetch(`http://localhost:3000/likes`, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          superhero_id: character.id
+        })
+      })
+      .then(res => res.json())
+      .then(likeObj => {
+        let number = parseInt(likeCounter.innerText)
+        likeCounter.innerText = ''
+        likeCounter.innerText = number + 1
+      })
+    })
+
 
     //following is what happens when you click on edit icon
     editIcon.addEventListener('click', event => {
@@ -299,7 +331,7 @@ function renderCharacterCards(character) {
     document.getElementById('edit-character-name').value = character.name
     document.getElementById('edit-image-url').value = character.image_url
     document.getElementById('edit-character-full-name').value = character.full_name
-    document.getElementById('edit-character-intelligence').value = character.inetelligence
+    document.getElementById('edit-character-intelligence').value = character.intelligence
     document.getElementById('edit-character-strength').value = character.strength
     document.getElementById('edit-character-speed').value = character.speed
     document.getElementById('edit-character-durability').value = character.durability

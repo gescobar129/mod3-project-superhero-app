@@ -49,7 +49,7 @@ body{
 
 .character-card:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    -webkit-transform: scale(5.06);
+    /* -webkit-transform: scale(5.06); */
     transform: scale(1.16);
 }
 
@@ -87,7 +87,7 @@ body{
     padding-left: 80px;
     padding-bottom: 0px;
     padding-top: 0px;
-    
+
 }
 
 .modal-header-names {
@@ -156,4 +156,7 @@ body{
 #myInput{
     /* border: 2px solid blue; */
     width: 30%; 
+}
+.like-count {
+  color: white
 }
