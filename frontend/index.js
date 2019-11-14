@@ -286,7 +286,7 @@ function renderCharacterCards(character) {
 
         let charRelatives = document.querySelector('.char-relatives')
         charRelatives.innerText = character.relatives
-        
+
     })
 
 
@@ -424,6 +424,7 @@ saveForm.addEventListener('submit', event => {
         // const modalBackdrop = document.querySelector('.modal-backdrop')
         // modalBackdrop.remove()
         $('#createModal').modal('hide')
+        location.reload(true)
     })
 })
 
