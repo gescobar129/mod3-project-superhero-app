@@ -57,7 +57,7 @@ function renderCharacterCards(character) {
     editIcon.setAttribute('class', 'editIcon')
     editIcon.setAttribute('data-toggle', 'modal')
     editIcon.setAttribute('data-target', '#editModal')
-    editIcon.src = './edit.png'
+    editIcon.src = './pencil.png'
 
     // append shit
     cardNames.append(characterName, characterFullName, editIcon)

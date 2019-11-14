@@ -1,3 +1,33 @@
+.superhero-wiki-title-div {
+    font-family: 'Rambla', sans-serif;
+    font-family: 'Permanent Marker', cursive;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#wiki-title {
+    font-size: 80px;
+}
+
+.character-list-title {
+    font-family: 'Rambla', sans-serif;
+    padding-left: 35px;
+    padding-bottom: 40px;
+}
+
+.chicken {
+    padding-left: 35px;
+    padding-right: 1230px;
+    font-family: 'Rambla', sans-serif;
+}
+
+.create-button-div {
+    padding-left: 35px;
+    padding-bottom: 20px;
+}
+
 .character-container {
     display: flex;
     flex-direction: row;
@@ -8,28 +38,30 @@
 }
 
 .character-card {
-    padding: 5px
+    margin: 5px;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .character-card:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     -webkit-transform: scale(5.06);
-	transform: scale(1.16);
+    transform: scale(1.16);
 }
 
 .image-size {
     padding: 0px;
     width: 200px;
     height: 240px;
-    /* min-width: 210px; */
-    /* min-height: 130px */
-    /* display: flex; */
-    /* flex-shrink: ; */
 }
 
 .card-names {
-    background:#607d8b;
-    height: 100px
+    background:black;
+    height: 100px;
+    color: white;
+    font-family: 'Rambla', sans-serif;
+    padding-left: 10px;
+    padding-top: 16px;
 }
 
 .character-name {
@@ -48,14 +80,33 @@
 
 .modal-header {
     background-color: black;
+    padding-left: 80px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    
+}
+
+.modal-header-names {
+    display: flex;
+    justify-content: center;
+    /* align-content: center; */
+    flex-direction: column;
+    padding-top: 70px
 }
 
 .modal-character-name {
     color: white;
+    text-align: center;
+    font-size: 90px;
+    font-family: 'Rambla', sans-serif;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .modal-character-fullname {
-    color: white;
+    color: #f1c40f;
+    font-size: 20px;
+    font-family: 'Rambla', sans-serif;
+    padding-left: 50px;
 }
 
 .border {
@@ -65,22 +116,35 @@
 }
 
 .editIcon {
-    height: 25px;
-    width: 25 px;
+    height: 20px;
+    width: 20px;
 }
-
-
 
 .container-fluid {
   display: flex;
   flex-direction: row
 }
+
 .bio {
-    border-top: 50px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-color: black;
     font-family: 'Rambla', sans-serif;
+    padding: 15px;
 }
 
 .info-padding {
     padding: 32px;
 }
 
+.row-padding {
+    padding: 20px;
+}
+
+#top-row-stats {
+    padding-top: 60px;
+}
+
+#bottom-row-stats {
+    padding-bottom: 60px;
+}

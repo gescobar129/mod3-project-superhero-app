@@ -7,16 +7,22 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' media='screen' href='character-list.css'>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Rambla&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rambla&display=swap" rel="stylesheet">
     <script defer src='./index.js'></script>
 </head>
 <body>
+    <div class='superhero-wiki-title-div'>
+        <h1 id='wiki-title'>Superhero Wiki</h1>
+    </div>
 
-    <h3>Character List</h3>
+    <div class="character-list-title">
+        <h3>Character List</h3>
+    </div>
 
     <!-- SEARCH BAR -->
     <div class="chicken">
-      <h2>Search Characters</h2>
+      <h5>Search Characters</h5>
       <input class="form-control" id="myInput" type="text" placeholder="Search...">
       <br>
     </div>
@@ -230,13 +236,15 @@
               <div class="modal-content">
                     <div class="modal-header">
                         <img src="" class="modal-image" alt="">
-                        <h3 class="modal-character-name"></h4>
-                        <h5 class="modal-character-fullname"></h5>
+                        <div class="modal-header-names">
+                            <h3 class="modal-character-name"></h4>
+                            <h5 class="modal-character-fullname"></h5>
+                        </div>
                         <!-- <canvas id="myChart"></canvas> -->
                         <h5 class="modal-title h4" id="myExtraLargeModalLabel"></h5>
                     </div>
 
-                    <div class="container-fluid">
+                    <div class="container-fluid" id="top-row-stats">
 <!-- stats go here -->
 
 <!-- chart starts here -->
@@ -253,7 +261,7 @@
 
                     </div>
 
-                    <div class="container-fluid">
+                    <div class="container-fluid" id="bottom-row-stats">
 <!-- stats go here -->
 
 <!-- chart starts here -->
@@ -272,9 +280,9 @@
                     </div>
                     
                     <div class="container">
-                        <div class="row">
+                        <div class="row row-padding">
 
-                            <div class="col-sm bio">
+                            <div class="col-3 bio">
                                 <h3>BIOGRAPHY</h3>
                             </div>
 
@@ -302,7 +310,7 @@
                                     
                             </div>
 
-                            <div class="col-sm">
+                            <div class="col-4">
 
                                 <div class="border info-padding">
                                     <label>Height</label><br/>
