@@ -119,7 +119,14 @@ function renderCharacterCards(character) {
             },
 
             // Configuration options go here
-            options: {events: ['click']}
+            options: {events: ['click'],
+                      legend: {
+                          labels: {
+                              // This more specific font property overrides the global property
+                              fontSize: 25
+                          }
+                      }
+                  }
         });
         chart.canvas.parentNode.style.height = '200px';
         chart.canvas.parentNode.style.width = '1000px';
@@ -151,7 +158,14 @@ function renderCharacterCards(character) {
             },
 
             // Configuration options go here
-            options: {events: ['click']}
+            options: {events: ['click'],
+                      legend: {
+                          labels: {
+                              // This more specific font property overrides the global property
+                              fontSize: 25
+                          }
+                      }
+                  }
         });
         chart.canvas.parentNode.style.height = '200px';
         chart.canvas.parentNode.style.width = '1000px';
@@ -182,7 +196,14 @@ function renderCharacterCards(character) {
             },
 
             // Configuration options go here
-            options: {events: ['click']}
+            options: {events: ['click'],
+                      legend: {
+                          labels: {
+                              // This more specific font property overrides the global property
+                              fontSize: 25
+                          }
+                      }
+                  }
         });
         chart.canvas.parentNode.style.height = '200px';
         chart.canvas.parentNode.style.width = '1000px';
@@ -212,7 +233,14 @@ function renderCharacterCards(character) {
             },
 
             // Configuration options go here
-            options: {events: ['click']}
+            options: {events: ['click'],
+                      legend: {
+                          labels: {
+                              // This more specific font property overrides the global property
+                              fontSize: 25
+                          }
+                      }
+                  }
         });
         chart.canvas.parentNode.style.height = '200px';
         chart.canvas.parentNode.style.width = '1000px';
@@ -242,7 +270,25 @@ function renderCharacterCards(character) {
             },
 
             // Configuration options go here
-            options: {events: ['click']}
+            options: {events: ['click'],
+                      legend: {
+                          labels: {
+                              // This more specific font property overrides the global property
+                              fontSize: 25
+                          }
+                      }
+                  }
+
+
+
+
+
+
+
+
+
+
+
         });
         chart.canvas.parentNode.style.height = '200px';
         chart.canvas.parentNode.style.width = '1000px';
@@ -272,7 +318,14 @@ function renderCharacterCards(character) {
             },
 
             // Configuration options go here
-            options: {events: ['click']}
+            options: {events: ['click'],
+                      legend: {
+                          labels: {
+                              // This more specific font property overrides the global property
+                              fontSize: 25
+                          }
+                      }
+                  }
         });
         chart.canvas.parentNode.style.height = '200px';
         chart.canvas.parentNode.style.width = '1000px';
@@ -353,7 +406,7 @@ function renderCharacterCards(character) {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
-                    Accept: "application/json"
+                    'Accept': "application/json"
                 },
                 body: JSON.stringify({
                     name: uppercase(event.target['edit-character-name'].value),
