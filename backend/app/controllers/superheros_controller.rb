@@ -29,7 +29,7 @@ class SuperherosController < ApplicationController
   private
 
   def superhero_params
-    params.require(:superhero).permit(:name, :intelligence, :strength, :speed, :durability, :power, :combat, :full_name, :place_of_birth, :height_feet, :weight_lbs, :eye_color, :hair_color, :occupation, :relatives, :image_url)
+    params.require(:superhero).permit(:name, :intelligence, :strength, :speed, :durability, :power, :combat, :full_name, :place_of_birth, :height_feet, :weight_lbs, :eye_color, :hair_color, :occupation, :relatives, :image_url, :bio, :universe)
   end
 
 end

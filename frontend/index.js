@@ -38,6 +38,10 @@ function renderCharacterCards(character) {
     characterName.setAttribute('class', 'character-name')
     characterName.innerText = uppercase(character.name)
 
+
+
+
+
     //character real name
     let characterFullName = document.createElement('h5')
     characterFullName.setAttribute('class', 'character-fullname')
@@ -306,6 +310,14 @@ function renderCharacterCards(character) {
         let charRelatives = document.querySelector('.char-relatives')
         charRelatives.innerText = character.relatives
 
+
+
+
+        //character bio
+        let characterBio = document.querySelector('.bio-content')
+        // debugger
+        characterBio.innerText = character.bio
+        console.log(characterBio)
     })
 
     heartIcon.addEventListener('click', event => {
@@ -350,6 +362,8 @@ function renderCharacterCards(character) {
     document.getElementById('edit-character-occupation').value = character.occupation
     document.getElementById('edit-character-birth').value = character.place_of_birth
     document.getElementById('edit-character-relatives').value = character.relatives
+    document.getElementById('edit-character-universe').value = character.universe
+    document.getElementById('edit-character-bio').value = character.bio
 
     //following is what happens when you click 'save' button on edit form
     editForm.addEventListener('submit', event => {
@@ -378,6 +392,8 @@ function renderCharacterCards(character) {
                     occupation: event.target['edit-character-occupation'].value,
                     place_of_birth: event.target['edit-character-birth'].value,
                     relatives: event.target['edit-character-relatives'].value,
+                    bio: event.target["edit-character-bio"].value,
+                    universe: event.target["edit-character-universe"].value,
                 })
             })
             .then(response => response.json())
@@ -389,6 +405,7 @@ function renderCharacterCards(character) {
                     $('#editModal').modal('hide')
                 characterArray.forEach(character => {
                 renderCharacterCards(character)
+                location.reload(true)
             })
         })
     })
@@ -423,7 +440,8 @@ saveForm.addEventListener('submit', event => {
             name: uppercase(event.target['create-character-name'].value),
             image_url: event.target["create-image-url"].value,
             full_name: event.target["create-character-full-name"].value,
-            // name: event.target["bio-text"].value,
+            bio: event.target["create-character-bio"].value,
+            universe: event.target["create-character-universe"].value,
             intelligence: event.target["create-character-intelligence"].value,
             strength: event.target["create-character-strength"].value,
             speed: event.target["create-character-speed"].value,

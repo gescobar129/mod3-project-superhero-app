@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 2019_11_14_161247) do
     t.string "group_affiliation"
     t.string "relatives"
     t.string "image_url"
+    t.text "bio"
+    t.string "universe"
   end
 
   add_foreign_key "likes", "superheros"

@@ -17,6 +17,11 @@ puts 'Fetching superhero data...'
     url: request_url)
     # headers: {params: {APPID: ENV['APPID']}})
   superhero = JSON.parse(request)
+
+  if superhero['biography']['full-name'] == ""
+    superhero['biography']['full-name'] = " "
+  end
+
   Superhero.create(
     name: superhero['name'],
     intelligence: superhero['powerstats']['intelligence'],
