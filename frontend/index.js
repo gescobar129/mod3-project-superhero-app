@@ -41,7 +41,7 @@ function renderCharacterCards(character) {
     //character real name
     let characterFullName = document.createElement('h5')
     characterFullName.setAttribute('class', 'character-fullname')
-    characterFullName.innerText = `${character.full_name}  .`
+    characterFullName.innerText = character.full_name
 
     //card under the image div
     let cardNames = document.createElement('div')

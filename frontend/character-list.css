@@ -7,7 +7,7 @@ body{
     display: flex;
     justify-content: center;
     padding-top: 40px;
-    padding-bottom: 50px;
+    padding-bottom: 15px;
 }
 
 #wiki-title {
@@ -20,16 +20,48 @@ body{
     padding-bottom: 40px;
 }
 
-.chicken {
-    /* border: 2px solid red; */
-    padding-left: 35px;
-    padding-right: 30px;
-    font-family: 'Rambla', sans-serif;
+.search-and-button-div {
+    /* display: flex; */
+    /* align-content: flex-end; */
+    /* align-items: flex-end; */
+    width: 100%;
+    display: inline-block;
+    /* border: 2px solid yellow; */
 }
 
+.chicken {
+    /* border: 2px solid red; */
+    /* padding-left: 35px;
+    padding-right: 30px; */
+    /* border: 2px solid red; */
+    
+    width: 80%;
+    max-width:70%;
+    height: 180px;
+    font-family: 'Rambla', sans-serif;
+    justify-content: flex-start;
+    float: left;
+    /* padding-top: 300px; */
+}
+
+
+
 .create-button-div {
-    padding-left: 35px;
-    padding-bottom: 20px;
+    /* padding-left: 35px;
+    padding-bottom: 20px; */
+    
+    max-width: 70%;
+    height: 25%;
+    /* border: 2px solid blue; */
+    margin-bottom: 50px;
+    margin-top: 10px;
+    padding-top: 30px;
+    padding-right: 50px;
+    margin-right: 20px;
+
+    float: right;
+
+
 }
 
 
@@ -168,7 +200,11 @@ body{
 
 #myInput{
     /* border: 2px solid blue; */
-    width: 30%; 
+    margin-top: 70px;
+    margin-left: 70px;
+    padding-left: 20px;
+    width: 70%; 
+    height: 35%;
 }
 .like-count {
   color: white;

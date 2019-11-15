@@ -6,11 +6,13 @@ body {
 body, .button:after {
   background: white;
 }
-.ctn {
+
+/* .ctn {
   display: block;
   margin: auto;
   text-align: center;
-}
+} */
+
 footer {
   position: fixed;
   bottom: 5px;
