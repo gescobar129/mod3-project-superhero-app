@@ -41,20 +41,21 @@ function renderCharacterCards(character) {
     //character real name
     let characterFullName = document.createElement('h5')
     characterFullName.setAttribute('class', 'character-fullname')
-    characterFullName.innerText = character.full_name
+    characterFullName.innerText = `${character.full_name}  .`
 
+    //card under the image div
     let cardNames = document.createElement('div')
     cardNames.setAttribute('class', 'card-names')
-    let likeCounter = document.createElement('div')
-    likeCounter.setAttribute('class', 'like-count')
-    likeCounter.innerText = character.likes.length
-
 
     //button-modal feature
     let modalDiv = document.createElement('div')
     modalDiv.setAttribute('data-target', '.bd-example-modal-xl')
     modalDiv.setAttribute('data-toggle', 'modal')
     modalDiv.setAttribute('type', 'button')
+
+    //icons div
+    let iconsDiv = document.createElement('div')
+    iconsDiv.setAttribute('class', 'icons-div')
 
     //edit icon button
     let editIcon = document.createElement('img')
@@ -63,17 +64,22 @@ function renderCharacterCards(character) {
     editIcon.setAttribute('data-target', '#editModal')
     editIcon.src = './pencil.png'
 
-    // heart icon button
+    //heart icon button
     let heartIcon = document.createElement('img')
     heartIcon.src = './heart.png'
     heartIcon.setAttribute('class', 'heartIcon')
 
+    //like number
+    let likeCounter = document.createElement('div')
+    likeCounter.setAttribute('class', 'like-count')
+    likeCounter.innerText = character.likes.length
 
 
 
 
     // append shit
-    cardNames.append(characterName, characterFullName, editIcon, heartIcon, likeCounter)
+    iconsDiv.append(editIcon, heartIcon, likeCounter)
+    cardNames.append(characterName, characterFullName, iconsDiv)
     modalDiv.append(characterImage)
     characterCard.append(modalDiv, cardNames)
     characterContainer.append(characterCard)
@@ -395,6 +401,8 @@ let createButton = document.createElement('button')
 createButton.setAttribute('type', 'button')
 createButton.setAttribute('data-toggle', 'modal')
 createButton.setAttribute('data-target', '#createModal')
+createButton.setAttribute('class', 'button b-red')
+
 createButton.innerText = "Create Character"
 
 createButtonDiv.append(createButton)

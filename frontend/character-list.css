@@ -7,7 +7,7 @@ body{
     display: flex;
     justify-content: center;
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
 }
 
 #wiki-title {
@@ -31,6 +31,7 @@ body{
     padding-left: 35px;
     padding-bottom: 20px;
 }
+
 
 .character-container {
     display: flex;
@@ -66,6 +67,8 @@ body{
     font-family: 'Rambla', sans-serif;
     padding-left: 10px;
     padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 10px;
 }
 
 .character-name {
@@ -119,7 +122,17 @@ body{
     font-family: 'Rambla', sans-serif;
 }
 
+.icons-div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .editIcon {
+    height: 20px;
+    width: 20px;
+}
+
+.heartIcon {
     height: 20px;
     width: 20px;
 }
@@ -158,5 +171,6 @@ body{
     width: 30%; 
 }
 .like-count {
-  color: white
+  color: white;
+  font-size: 17px
 }
