@@ -10,13 +10,18 @@ puts "Deleting existing data..."
 Superhero.destroy_all
 
 puts 'Fetching superhero data...'
-(1..731).to_a.each do |superhero_id|
+(1..7).to_a.each do |superhero_id|
   request_url = "https://www.superheroapi.com/api.php/10220107637702540/#{superhero_id}"
   request = RestClient::Request.execute(
     method: :get,
     url: request_url)
     # headers: {params: {APPID: ENV['APPID']}})
   superhero = JSON.parse(request)
+
+  if superhero['biography']['full-name'] == ""
+    superhero['biography']['full-name'] = " "
+  end
+
   Superhero.create(
     name: superhero['name'],
     intelligence: superhero['powerstats']['intelligence'],

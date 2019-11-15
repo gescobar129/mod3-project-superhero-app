@@ -41,6 +41,7 @@ function renderCharacterCards(character) {
 
     //character bio
     let characterBio = document.querySelector('.bio-content')
+
     characterBio.innerText = character.bio
 
 
