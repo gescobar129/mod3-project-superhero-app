@@ -28,6 +28,8 @@ class CreateSuperheros < ActiveRecord::Migration[6.0]
       t.string :group_affiliation
       t.string :relatives
       t.string :image_url
+      t.text :bio
+      t.string :universe
     end
   end
 end
