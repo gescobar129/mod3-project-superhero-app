@@ -39,11 +39,6 @@ function renderCharacterCards(character) {
     characterName.innerText = uppercase(character.name)
 
 
-    //character bio
-    let characterBio = document.querySelector('.bio-content')
-
-    characterBio.innerText = character.bio
-
 
 
 
@@ -309,6 +304,14 @@ function renderCharacterCards(character) {
         let charRelatives = document.querySelector('.char-relatives')
         charRelatives.innerText = character.relatives
 
+
+
+
+        //character bio
+        let characterBio = document.querySelector('.bio-content')
+        // debugger
+        characterBio.innerText = character.bio
+        console.log(characterBio)
     })
 
     heartIcon.addEventListener('click', event => {
@@ -396,6 +399,7 @@ function renderCharacterCards(character) {
                     $('#editModal').modal('hide')
                 characterArray.forEach(character => {
                 renderCharacterCards(character)
+                location.reload(true)
             })
         })
     })
