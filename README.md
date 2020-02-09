@@ -6,7 +6,7 @@ A wikipedia-like app in which you can search any superhero/villain and view more
 
 ### Front-End
 
-- [React.js](https://reactjs.org/)
+- Vanilla JS
 - [Bootstrap](https://getbootstrap.com/)
 - [Chart JS](https://www.chartjs.org/)
 
