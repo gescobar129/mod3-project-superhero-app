@@ -14,6 +14,7 @@ A wikipedia-like app in which you can search any superhero/villain and view more
 
 - [Ruby](https://www.ruby-lang.org/en/)
 - [Ruby on Rails](https://rubyonrails.org/)
+- [Superhero API](https://superheroapi.com/)
 
 ## Installation
 
